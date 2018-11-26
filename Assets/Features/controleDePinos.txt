@@ -1,0 +1,37 @@
+Funcionalidade: Controle de Pinos
+Para que se possa acumular pontos
+Eu, como o jogo
+Quero controlar os pinos
+
+Cenário: Configuração de Pinos
+Dado que o jogador iniciou uma partida
+E é a primeira vez que o modo tentativa será iniciado na partida atual
+Quando o modo tentativa for iniciado
+Então os 10 pinos precisam estar posicionados de forma triangular
+E devem estar em pé
+
+Cenário: Cálculo de pontos
+Dado que o jogador arremessou a bola
+Quando o modo tentativa for finalizado
+Então para cada pino derrubado deve ser atribuido 1 ponto à pontuação do jogador
+
+Cenário: Não derrubar pinos gera pontuação igual a 0 na tentativa
+Dado que o jogador arremessou a bola
+E nenhum pino foi derrubado
+E é a primeira tentativa do jogador
+Quando o modo tentativa for finalizado
+Então pontuação do jogador deve ser igual a 0
+
+Cenário: Pinos derrubados desaparecem na segunda tentativa
+Dado que o jogador está em uma partida
+E o jogador está em sua segunda tentativa
+Quando o modo tentativa é iniciado
+Então os pinos que não foram derrubados na tentativa anterior devem permanecer na pista de boliche
+E os pinos que foram derrubados na tentativa anterior devem sumir da pista de boliche
+
+Cenário: Pontuação deve receber um bonus em caso de strike
+Dado que o jogador arremessou a bola
+E o modo tentativa foi finalizado
+E o número de pinos da tentativa era igual a 10 pinos
+Quando o jogador derruba todos os 10 pinos
+Então sua pontuação final deve ser de 20 pontos

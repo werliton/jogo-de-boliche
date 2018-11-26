@@ -1,0 +1,41 @@
+Funcionalidade: Controle de Partida
+Para garantir que a ordem do jogo
+Eu, como o jogo
+Quero controlar as partidas do joo
+
+Cenário: Configurar Partida
+Dado que o jogador iniciou o jogo
+Quando o jogo carregar pela primeira vez
+Então o jogo deve iniciar o modo partida
+E o contador de pontos deve ficar igual a 0
+E o contador de tentativas deve ficar igual a 2
+
+Cenário: Iniciar modo tentativa
+Dado que uma nova partida foi configurada
+Quando o jogo carregar o primeiro frame
+Então o jogo deve iniciar o modo tentativa
+
+Cenário: Bola sair da pista após arremesso
+Dado que o jogador arremessou a bola
+Quando a bola sair da pista
+Então o modo tentativa deve ser finalizado
+E o controlador de pinos deve reiniciar os pinos à posição original
+E o contador de tentativas deve diminuir em uma unidade
+
+Cenário: Bola parar de se mover após arremesso
+Dado que o jogador arremessou a bola
+Quando a bola não se mover mais do que 0,25 cm dentro de 2 segundos
+Então o modo tentativa deve ser finalizado
+E o controlador de pinos deve reiniciar os pinos à posição original
+E o contador de tentativas deve diminuir em uma unidade
+
+Cenário: Número de tentativas igual a 0
+Dado que o modo tentativa foi finalizado
+Quando o contador de tentativas chegar a 0
+Então o jogo deve finalizar
+E deve exibir a pontuação final do jogador na tela
+
+Cenário: Finalizar partida por strike
+Dado que o jogador arremessou a bola
+Quando o jogador derruba todos os 10 pinos
+Então o contador de tentativas deve ser igual a 0

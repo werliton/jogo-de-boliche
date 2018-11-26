@@ -1,0 +1,32 @@
+After installing the BDD Extension for Unity Test Tools v1.0.0 from the Unity Asset Store,
+if you have not the Unity Test Tools installed in your project, 
+you are going to have some build error: it is caused by the references to the Unity Test Tools classes.
+
+This short guide is about the installation of Unity Test Tools v.1.5.9
+
+Please, install the Unity Test Tools from the Unity Asset Store.
+
+If you are new on Unity Test Tools, you could experiment some build issues after installing them.
+
+If it happens, please, try the following steps:
+
+For Unity 5.3: 	
+	There are not documented issues.
+
+For Unity 5.4: 
+	There are not documented issues.
+
+For Unity 5.5: 
+	There are not documented issues.
+
+For Unity 5.6:
+	Open the file "Assets/UnityTestTools/Examples/UnitTestExamples/Editor/SampleTests.cs"
+	Comment out the row 74
+	Comment out the row 77
+	Insert a blank line after the row 77
+	Paste this line of code:    Assert.Throws<ArgumentException>(() => { throw new ArgumentException("expected message"); }, "expected message");
+	Save the file
+	Retry to build the assets on Unity.
+
+
+If you have som othe issues installing the BDD Extension framework or the Unity Test Tools, please write an email to info@huddimension.co.uk

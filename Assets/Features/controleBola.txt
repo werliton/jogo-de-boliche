@@ -1,0 +1,100 @@
+Funcionalidade: Arremesso de Bola de Boliche
+Para que se possa acumular pontos
+Eu, como o jogador
+Quero arremessar a bola de boliche contra os pinos
+
+Cenário: Configurar Bola para uma Tentativa
+Dado que uma partida foi iniciada
+Quando o modo tentativa for iniciado
+Então a bola de boliche deve estar localizada na área de lançamento
+E a seta de posição da bola deve ser apresentada acima da bola
+E a ação atual de arremesso de bola é igual a POSICAO
+
+Cenário: Modificando a Posição da Bola para a Direita
+Dado que o jogador encontra-se definindo a posição de arremesso da bola
+Quando o jogador pressiona o botão Seta Direita
+Então a posição da bola deve se movimentar para o lado direito em relação à camera
+E a nova posição deve ter diferença de 1 unidade em relação a posição anterior 
+
+Cenário: Modificando a Posição da Bola para a Esquerda
+Dado que o jogador encontra-se definindo a posição de arremesso da bola
+Quando o jogador pressiona o botão Seta Esquerda
+Então a posição da bola deve se movimentar para o lado esquerdo em relação à camera
+E a nova posição deve ter diferença de 1 unidade em relação a posição anterior
+
+Cenário: Limite Direito de Posição da Bola
+Dado que o jogador encontra-se definindo a posição de arremesso da bola
+E a posição da bola encontra-se no limite direito de posição da bola
+Quando o jogador pressiona o botão Seta Direita
+Então a posição da bola não deve modificar
+
+Cenário: Limite Esquerdo de Posição da Bola
+Dado que o jogador encontra-se definindo a posição de arremesso da bola
+E a posição da bola encontra-se no limite esquerdo de posição da bola
+Quando o jogador pressiona o botão Seta Esquerda
+Então a posição da bola não deve modificar
+
+Cenário: Confirmação da Posição da Bola pelo Jogador
+Dado que o jogador encontra-se definindo a posição de arremesso da bola
+Quando o jogador aperta o botão de confirmação
+Então a ação atual de arremesso de bola deve mudar para DIRECAO_FORCA
+E a bola deve ficar posicionada na posição escolhida pelo jogador
+E a seta de posição da bola deve desaparecer da tela
+E a seta de direção do arremesso deve surgir na tela
+E a seta de direção do arremesso deve apontar para frente
+
+Cenário: Modificando a Direção de Arremesso para a Direita
+Dado que o jogador encontra-se definindo a direção de arremesso da bola
+Quando o jogador pressiona o botão Seta Direita
+Então a seta de direção de arremesso deve apontar para o lado direito em relação a camera
+E a nova direção deve ter diferença de 5 unidades em relação a direção anterior
+
+Cenário: Modificando a Direção de Arremesso para a Esquerda
+Dado que o jogador encontra-se definindo a direção de arremesso da bola
+Quando o jogador pressiona o botão Seta Esquerda
+Então a seta de direção de arremesso deve apontar para o lado esquerdo em relação a camera
+E a nova direção deve ter diferença de 5 unidades em relação a direção anterior
+
+Cenário: Limite Direito de Direção da Bola
+Dado que o jogador encontra-se definindo a direção de arremesso da bola
+E a seta de direção encontra-se no limite direito de direção da bola
+Quando o jogador pressiona o botão Seta Direita
+Então a seta de direção de arremesso não deve modificar sua direção
+
+Cenário: Limite Esquerdo de Direção da Bola
+Dado que o jogador encontra-se definindo a direção de arremesso da bola
+E a seta de direção encontra-se no limite esquerdo de direção da bola
+Quando o jogador pressiona o botão Seta Esquerda
+Então a seta de direção de arremesso não deve modificar sua direção
+
+Cenário: Diminuindo a Força de Arremesso 
+Dado que o jogador encontra-se definindo a direção de arremesso da bola
+Quando o jogador pressiona o botão Seta Baixo
+Então a seta de direção de arremesso deve diminuir de tamanho no eixo vertical
+E o novo tamanho deve ter diferença de 1 unidade em relação ao tamanho anterior
+
+Cenário: Aumentando a Força de Arremesso
+Dado que o jogador encontra-se definindo a direção de arremesso da bola
+Quando o jogador pressiona o botão Seta Cima
+Então a seta de direção de arremesso deve aumentar de tamanho no eixo vertical
+E o novo tamanho deve ter diferença de 1 unidade em relação ao tamanho anterior
+
+Cenário: Limite Inferior de Força de Arremesso da Bola
+Dado que o jogador encontra-se definindo a força de arremesso da bola
+E a seta de direção encontra-se no limite inferior de força da bola
+Quando o jogador pressiona o botão Seta Baixo
+Então a seta de direção de arremesso não deve modificar seu tamanho
+
+Cenário: Limite Superior de Força de Arremesso Bola
+Dado que o jogador encontra-se definindo a força de arremesso da bola
+E a seta de direção encontra-se no limite superior de força da bola
+Quando o jogador pressiona o botão Seta Cima
+Então a seta de direção de arremesso não deve modificar seu tamanho
+
+Cenário: Arremesso de Bola
+Dado que o jogador definiu a direção e força de arremesso da bola
+Quando o jogador pressiona o botão de confirmação
+Então a ação atual de arremesso de bola deve mudar para ARREMESSO
+E a bola deve ser arremessada com a partir da posição atual
+E deve seguir a direção escolhida pela seta de direção
+E deve ser arremessada com a força expressada pelo tamanho da seta de direção
